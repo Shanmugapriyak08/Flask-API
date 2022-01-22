@@ -1,4 +1,4 @@
-from  flask import Flask,request
+from flask import Flask,request
 from flask.templating import render_template
 from database import insert_Record,select_Record,delete_Record,update_Location
 from emoji import emojize
@@ -13,7 +13,7 @@ def home_page():
     if request.form['pass'] == "priya":
         return render_template("employee_home_page.html")
     else:
-        return (f"InCorrect Password " + emojize(":unamused_face:"))
+        return (f"Correct Password " + emojize(":unamused_face:"))
 
 @app.route('/backhome')
 def backhome():
@@ -35,10 +35,10 @@ def savedetails():
             band=request.form["band"]
             try:
                 insert=insert_Record(id,name,email,location,salary,band)
-                msg="Employee successfully Added"
+                msg="Employee successfully Added "+emojize(":slightly_smiling_face:")
                 return render_template("employee_success.html",op_msg=msg)
             except :
-                errormsg="Employee ID is already present... (:"
+                errormsg="Employee ID is already present " + emojize(":unamused_face:")
                 return render_template("employee_success.html",op_msg=errormsg)
     except Exception as e:
         raise Exception (f"(savedetails):Something went wrong on while saving details "+str(e))
@@ -60,10 +60,10 @@ def after_delete():
             id=request.form["id"]
             edelete=delete_Record(id)
             if edelete!=0:
-                msg="Employee details Deleted successfully"
+                msg="Employee details Deleted successfully "+emojize(":slightly_smiling_face:")
                 return render_template("employee_after_delete.html",op_msg=msg)
             else:
-                errormsg="Entered employee Id is not available (:"
+                errormsg="Entered employee Id is not available "+ emojize(":unamused_face:")
                 return render_template("employee_after_delete.html",op_msg=errormsg)
             
     except Exception as e:
@@ -81,10 +81,10 @@ def after_update():
             id=request.form["id"]
             lupdate=update_Location(location,id)
             if lupdate!=0:
-                msg="Employee details Updated successfully..."
+                msg="Employee details Updated successfully "+ emojize(":slightly_smiling_face:")
                 return render_template("employee_after_update.html",op_msg=msg)
             else:
-                errormsg="Entered employee Id is not available (:"
+                errormsg="Entered employee Id is not available "+ emojize(":unamused_face:")
                 return render_template("employee_after_update.html",op_msg=errormsg) 
                
     except Exception as e:
