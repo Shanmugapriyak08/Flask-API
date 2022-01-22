@@ -13,7 +13,7 @@ def home_page():
     if request.form['pass'] == "priya":
         return render_template("employee_home_page.html")
     else:
-        return (f"InCorrect Passwords " + emojize(":unamused_face:"))
+        return (f"InCorrect Password " + emojize(":unamused_face:"))
 
 @app.route('/backhome')
 def backhome():
