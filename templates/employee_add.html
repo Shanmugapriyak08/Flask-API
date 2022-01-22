@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Add Employee</title>
+    <style>
+        h1 {text-align: center;} 
+        form{
+            margin-top:40px;
+        }
+        table.center {
+           margin-left: auto; 
+           margin-right: auto;
+         }
+        p{text-align: center;}
+     </style>  
+</head>  
+<body style="background-color:rgb(165, 238, 190);">  
+    <h1>Employee Information</h1>   
+    <form action = "/savedetails" method="post">  
+    <table class="center">
+        <tr><td>Emp ID</td><td><input type="number" name="id" required></td></tr>  
+        <tr><td>Name</td><td><input type="text" name="name" required></td></tr>  
+        <tr><td>Email</td><td><input type="email" name="email" required></td></tr>  
+        <tr><td>Location</td><td><input type="text" name="location" required></td></tr>
+        <tr><td>Salary</td><td><input type="number" name="salary" required></td></tr> 
+        <tr><td>Band</td><td><input type="text" name="band" required></td></tr>
+    </table> 
+    <p><input type="submit" value="Submit"></p> 
+    </form>  
+</body>  
+</html>  

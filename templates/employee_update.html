@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>delete record</title>  
+    <style>
+        h3 {text-align: center;} 
+        form{
+            margin-top:80px;
+        }
+        table.center {
+           margin-left: auto; 
+           margin-right: auto;
+         }
+        p{text-align: center;}
+     </style>
+</head>  
+<body style="background-color:rgb(165, 238, 190);">  
+  
+    <h3>Update Employee details </h3>  
+  
+    <form action="/afterupdate" method="post">  
+        <table class="center">
+            <tr><td>Employee ID</td><td><input type="number" name="id" required></td></tr>  
+            <tr><td>Location</td><td><input type="text" name="location" required></td></tr>
+        </table> 
+        <p><input type="submit" value="Submit"></p>  
+    </form>  
+</body>  
+</html>  
