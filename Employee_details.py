@@ -10,7 +10,7 @@ def login():
 
 @app.route("/home",methods=["POST"])
 def home_page():
-    if request.form['pass'] == "priya":
+    if (request.form['email'] == "admin@gmail.com") and (request.form['pass'] == "admin"):
         return render_template("employee_home_page.html")
     else:
         return (f"InCorrect Password " + emojize(":unamused_face:"))
